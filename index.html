@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .countdown {
+            font-size: 1.5em;
+            color: #ff4081;
+        }
+        .join-button {
+            background-color: #ff4081;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+        .join-button:hover {
+            background-color: #e91e63;
+            transform: scale(1.05);
+        }
+        footer {
+            font-size: 0.8em;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redirecting...</h1>
+        <p>You will be redirected in <span class="countdown" id="countdown">5</span> seconds.</p>
+        <p>Join NexoBytes Development Today!</p>
+        <button class="join-button" onclick="window.location.href='https://nexobyte.netlify.app/'">Join Now</button>
+    </div>
+    <footer>
+        &copy; 2023 Nexobytes Development. All rights reserved.
+    </footer>
+
+    <script>
+        let countdownElement = document.getElementById('countdown');
+        let countdownValue = 5;
+
+        const countdownInterval = setInterval(() => {
+            countdownValue--;
+            countdownElement.textContent = countdownValue;
+
+            if (countdownValue <= 0) {
+                clearInterval(countdownInterval);
+                // Replace 'https://example.com' with your target URL
+                window.location.href = 'https://bytesmusiclinks.netlify.app/';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
